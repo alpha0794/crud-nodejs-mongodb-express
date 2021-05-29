@@ -9,7 +9,7 @@ router.get('/', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
-  const db = dataBase.get('rest-shop');
+  const db = dataBase.get('crud-nodejs-mongodb-express');
   if (req.body) {
     var jsonObj = JSON.parse(JSON.stringify(req.body, null, 3));
   } else {
@@ -30,7 +30,7 @@ router.post('/', (req, res, next) => {
         res.status(200).json({
           status: '200',
           message: 'Success creating product!',
-          data: response,
+          data: response.ops,
         });
       }
     });
@@ -40,10 +40,6 @@ router.post('/', (req, res, next) => {
       message: 'Please add body!',
     });
   }
-
-  res.status(201).json({
-    message: 'POST PRODUCT WORK!',
-  });
 });
 
 router.get('/:productId', (req, res, next) => {

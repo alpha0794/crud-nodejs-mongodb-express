@@ -1,5 +1,5 @@
 {
-  "name": "npm-alpha-crud",
+  "name": "alpha-crud",
   "version": "1.0.1",
   "description": "A node.js RESTful API.",
   "main": "index.js",
